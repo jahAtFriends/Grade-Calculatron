@@ -2,65 +2,97 @@
 <html>
   <head>
     <title>Grade Calculatron</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style.css"/>
   </head>
   <body>
     <div class="header" id="main-header">
       Grade Calculatron
     </div>
-    <div class="grade-box" id="habits-of-mind">
-      <label for="habits-of-mind-select">Habits of Mind: </label>
-      <select id="habits-of-mind-select">
-        <option value=4.0>A+</option>
-        <option value=3.8>A</option>
-        <option value=3.6>A-</option>
-        <option value=3.3>B+</option>
-        <option value=3.0>B</option>
-        <option value=2.7>B-</option>
-        <option value=2.3>C+</option>
-        <option value=2.0>C</option>
-        <option value=1.7>C-</option>
-        <option value=1.3>D+</option>
-        <option value=1.0>D</option>
-        <option value=0.5>D-</option>
-        <option value=0.0>F</option>
-      </select>
+    <div id = "options">
+      <input type="checkbox" id="show-weights">
+      <label for="show-weights" id="show-weights-label">Enable Category Weights</label>
     </div>
-    <div class="grade-box" id="coding-practice">
-      <label for="coding-practice-select">Coding Practice: </label>
-      <select id="coding-practice-select">
-        <option value=4.0>A+</option>
-        <option value=3.8>A</option>
-        <option value=3.6>A-</option>
-        <option value=3.3>B+</option>
-        <option value=3.0>B</option>
-        <option value=2.7>B-</option>
-        <option value=2.3>C+</option>
-        <option value=2.0>C</option>
-        <option value=1.7>C-</option>
-        <option value=1.3>D+</option>
-        <option value=1.0>D</option>
-        <option value=0.5>D-</option>
-        <option value=0.0>F</option>
-      </select>
+    <table id = "grade-categories">
+      <tr id = "habits-of-mind-entry"></tr>
+        <td class="grade-entry-label">Habits of Mind</td>
+        <td>
+          <select id="habits-of-mind-select">
+            <option value=4.0>A+</option>
+            <option value=3.8>A</option>
+            <option value=3.6>A-</option>
+            <option value=3.3>B+</option>
+            <option value=3.0>B</option>
+            <option value=2.7>B-</option>
+            <option value=2.3>C+</option>
+            <option value=2.0>C</option>
+            <option value=1.7>C-</option>
+            <option value=1.3>D+</option>
+            <option value=1.0>D</option>
+            <option value=0.5>D-</option>
+            <option value=0.0>F</option>
+          </select>
+        </td>
+        <td>
+          <input type="text" id="habits-of-mind-weight" value="0.3333333333" disabled>
+        </td>
+      </tr>
+      <tr id = "coding-practice-entry">
+        <td class="grade-entry-label">Coding Practice</td>
+        <td>
+          <select id="coding-practice-select">
+            <option value=4.0>A+</option>
+            <option value=3.8>A</option>
+            <option value=3.6>A-</option>
+            <option value=3.3>B+</option>
+            <option value=3.0>B</option>
+            <option value=2.7>B-</option>
+            <option value=2.3>C+</option>
+            <option value=2.0>C</option>
+            <option value=1.7>C-</option>
+            <option value=1.3>D+</option>
+            <option value=1.0>D</option>
+            <option value=0.5>D-</option>
+            <option value=0.0>F</option>
+          </select>
+        </td>
+        <td>
+          <input type="text" id="coding-practice-weight" value="0.3333333333" disabled>
+        </td>
+      </tr>
+      <tr id="computational-thinking-entry">
+        <td class="grade-entry-label">Computational Thinking</td>
+        <td>
+          <select id="computational-thinking-select">
+            <option value=4.0>A+</option>
+            <option value=3.8>A</option>
+            <option value=3.6>A-</option>
+            <option value=3.3>B+</option>
+            <option value=3.0>B</option>
+            <option value=2.7>B-</option>
+            <option value=2.3>C+</option>
+            <option value=2.0>C</option>
+            <option value=1.7>C-</option>
+            <option value=1.3>D+</option>
+            <option value=1.0>D</option>
+            <option value=0.5>D-</option>
+            <option value=0.0>F</option>
+          </select>
+        </td>
+        <td>
+          <input type="text" id="computational-thinking-weight" value="0.3333333334" disabled>
+        </td>
+      </tr>
+    </table>
+    
+    <div class = "read-out", id = "grade-output-area">
+      <div id = "letter-grade"> <span class="label">Letter Grade: </span>
+        <span id="letter-grade-readout"></span>
+      </div>
+      <div id = "percent-grade"> <span class = "label"> Percent Score: </span>
+        <span id = "percent-grade-readout"></span>
+      </div>
     </div>
-    <div class="grade-box" id="computational-thinking">
-      <label for="computational-thinking-select">Computational Thinking: </label>
-      <select id="habits-of-mind-select">
-        <option value=4.0>A+</option>
-        <option value=3.8>A</option>
-        <option value=3.6>A-</option>
-        <option value=3.3>B+</option>
-        <option value=3.0>B</option>
-        <option value=2.7>B-</option>
-        <option value=2.3>C+</option>
-        <option value=2.0>C</option>
-        <option value=1.7>C-</option>
-        <option value=1.3>D+</option>
-        <option value=1.0>D</option>
-        <option value=0.5>D-</option>
-        <option value=0.0>F</option>
-      </select>
-    </div>
+    
+    <script src="./script.js"></script>
   </body>
 </html>
