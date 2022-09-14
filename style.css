@@ -1,0 +1,18 @@
+#main-header {
+    font-size: 45px;
+    text-align: center;
+    padding: 20px;
+    color: crimson;
+    background-color: black;
+    opacity: 50%;
+    margin: 10px;
+}
+
+td {
+    
+    padding: 5px;
+}
+
+.grade-entry-label {
+    font-weight: bold;
+}
