@@ -9,8 +9,8 @@
       Grade Calculatron
     </div>
     <div id = "options">
-      <input type="checkbox" id="show-weights">
-      <label for="show-weights" id="show-weights-label">Enable Category Weights</label>&nbsp;&nbsp;&nbsp;
+      <div id="options-title">Settings</div>
+      <button id="even-weight-button">Weight Categories Evenly</button>
       <label for="set-points" id="total-points-label">Total Points</label>
       <input type="text" id="total-points" value="100">
     </div>
@@ -35,7 +35,8 @@
           </select>
         </td>
         <td>
-          <input type="text" id="habits-of-mind-weight" value="0.3333333333" disabled>
+          <label class="weight-label" for="habits-of-mind-weight">Weight: </label>
+          <input type="text" id="habits-of-mind-weight" value="0.3333333333">
         </td>
       </tr>
       <tr id = "coding-practice-entry">
@@ -58,7 +59,8 @@
           </select>
         </td>
         <td>
-          <input type="text" id="coding-practice-weight" value="0.3333333333" disabled>
+          <label class="weight-label" for="coding-practice-weight">Weight: </label>
+          <input type="text" id="coding-practice-weight" value="0.3333333333">
         </td>
       </tr>
       <tr id="computational-thinking-entry">
@@ -81,7 +83,8 @@
           </select>
         </td>
         <td>
-          <input type="text" id="computational-thinking-weight" value="0.3333333334" disabled>
+          <label class="weight-label" for="computational-thinking-weight">Weight: </label>
+          <input type="text" id="computational-thinking-weight" value="0.3333333334">
         </td>
       </tr>
     </table>

@@ -14,6 +14,7 @@ const homWeight = document.getElementById("habits-of-mind-weight");
 const cpWeight = document.getElementById("coding-practice-weight");
 const ctWeight = document.getElementById("computational-thinking-weight");
 const totalPoints = document.getElementById("total-points");
+const evenWeight = document.getElementById("even-weight-button").onclick = assignEvenWeights;
 
 
 updateGrade();
@@ -21,7 +22,6 @@ updateGrade();
 homSelect.addEventListener("change", updateGrade);
 cpSelect.addEventListener("change", updateGrade);
 ctSelect.addEventListener("change", updateGrade);
-showWeights.addEventListener("change", toggleWeights);
 homWeight.addEventListener("focusout", updateGrade);
 cpWeight.addEventListener("focusout", updateGrade);
 ctWeight.addEventListener("focusout", updateGrade);
@@ -76,14 +76,10 @@ function outputGrade(letterGrade, percentScore, totalPoints) {
     document.getElementById("points-earned-readout").innerHTML = totalPoints;
 }
 
-function toggleWeights() {
-    if (showWeights.checked) {
-        document.getElementById("habits-of-mind-weight").disabled = false;
-        document.getElementById("coding-practice-weight").disabled = false;
-        document.getElementById("computational-thinking-weight").disabled = false;
-    } else {
-        document.getElementById("habits-of-mind-weight").disabled = true;
-        document.getElementById("coding-practice-weight").disabled = true;
-        document.getElementById("computational-thinking-weight").disabled = true;
-    }
+function assignEvenWeights() {
+    homWeight.value = "0.3333333333";
+    cpWeight.value = "0.3333333333";
+    ctWeight.value = "0.3333333334";
+    
+    updateGrade();
 }
