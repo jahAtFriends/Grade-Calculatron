@@ -20,7 +20,7 @@ to the nearest whole percent. Note also that the minimum allowed grade is a 59% 
 
 | Letter Grade | 4-point Score | Percentage Range |
 |--------------|---------------|------------------|
-|     A+       | 4.0           | $(96 \percent, 100 \%]$  |
+|     A+       | 4.0           |$(96$ %, $100$%$]$|
 |     A        | 3.8           | 93% - 96%        |
 |     A-       | 3.6           | 90% - 92%        |
 |     B+       | 3.3           | 87% - 89%        |
