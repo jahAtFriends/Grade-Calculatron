@@ -20,7 +20,7 @@ to the nearest whole percent. Note also that the minimum allowed grade is a 59% 
 
 | Letter Grade | 4-point Score | Percentage Range |
 |--------------|---------------|------------------|
-|     A+       | 4.0           | 97% - 100%       |
+|     A+       | 4.0           | $(96, 100]$      |
 |     A        | 3.8           | 93% - 96%        |
 |     A-       | 3.6           | 90% - 92%        |
 |     B+       | 3.3           | 87% - 89%        |
@@ -39,3 +39,8 @@ To take a weighted average of all categories on the rubric, let $g_i$ denote the
 and $w_i$ be the weight corresponding to the same category. Then the overall 4-point grade $G$ is given by 
 
 $$G = \sum_i g_i \cdot w_i $$
+
+### Conversion Back to Letter Grade and Percentage
+
+The weighted average yields a 4-point score. If necessary to convert back to a letter grade use the chart above.
+The third collumn gives a range of percentages
