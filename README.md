@@ -19,5 +19,5 @@ the following table serves as a reference. Note that percentage grades are alway
 to the nearest whole percent.
 
 | Letter Grade | 4-point Score | Percentage Range |
-|-------------------------------------------------|
+|--------------|---------------|------------------|
 |     A+       | 4.0           | 96% - 97%        |
