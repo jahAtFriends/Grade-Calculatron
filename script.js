@@ -13,6 +13,7 @@ const showWeights = document.getElementById("show-weights");
 const homWeight = document.getElementById("habits-of-mind-weight");
 const cpWeight = document.getElementById("coding-practice-weight");
 const ctWeight = document.getElementById("computational-thinking-weight");
+const totalPoints = document.getElementById("total-points");
 
 
 updateGrade();
@@ -24,6 +25,7 @@ showWeights.addEventListener("change", toggleWeights);
 homWeight.addEventListener("focusout", updateGrade);
 cpWeight.addEventListener("focusout", updateGrade);
 ctWeight.addEventListener("focusout", updateGrade);
+totalPoints.addEventListener("change", updateGrade);
 
 function updateGrade() {
     let homscore = parseFloat(homSelect.value);
@@ -59,15 +61,19 @@ function updateGrade() {
     let percentScore = (avg - grades[lb][1]) / (grades[ub][1] - grades[lb][1]) * (grades[ub][2] - grades[lb][2]) + grades[lb][2];
     percentScore *= 100;
     
-    outputGrade(grades[ub][0], percentScore);
+    let totalPoints = parseFloat(document.getElementById("total-points").value) * percentScore / 100.0;
+    
+    outputGrade(grades[ub][0], percentScore, totalPoints);
     
 }
 
-function outputGrade(letterGrade, percentScore) {
+function outputGrade(letterGrade, percentScore, totalPoints) {
     document.getElementById("letter-grade-readout").innerHTML = letterGrade;
     
     percentScore = Math.round(percentScore * 100) / 100;
     document.getElementById("percent-grade-readout").innerHTML = percentScore + "%";
+    
+    document.getElementById("points-earned-readout").innerHTML = totalPoints;
 }
 
 function toggleWeights() {
