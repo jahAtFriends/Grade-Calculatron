@@ -16,8 +16,20 @@ Grades are calculated according to the following algorithm:
 ### Conversion between letter grades, 4-point scale, and percentages
 Whenever a conversion between letter grades, 4-point scores, and percentages is needed,
 the following table serves as a reference. Note that percentage grades are always rounded
-to the nearest whole percent.
+to the nearest whole percent. Note also that the minimum allowed grade is a 59% (F).
 
 | Letter Grade | 4-point Score | Percentage Range |
 |--------------|---------------|------------------|
-|     A+       | 4.0           | 96% - 97%        |
+|     A+       | 4.0           | 97% - 100%       |
+|     A        | 3.8           | 93% - 96%        |
+|     A-       | 3.6           | 90% - 92%        |
+|     B+       | 3.3           | 87% - 89%        |
+|     B        | 3.0           | 83% - 86%        |
+|     B-       | 2.7           | 80% - 82%        |
+|     C+       | 2.3           | 77% - 79%        |
+|     C        | 2.0           | 73% - 76%        |
+|     C-       | 1.7           | 70% - 72%        |
+|     D+       | 1.3           | 67% - 69%        |
+|     D        | 1.0           | 63% - 66%        |
+|     D-       | 0.5           | 60% - 62%        |
+|     F        | 0.0           | 59%              |
