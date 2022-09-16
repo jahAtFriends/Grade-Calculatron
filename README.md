@@ -33,3 +33,9 @@ to the nearest whole percent. Note also that the minimum allowed grade is a 59% 
 |     D        | 1.0           | 63% - 66%        |
 |     D-       | 0.5           | 60% - 62%        |
 |     F        | 0.0           | 59%              |
+
+### Weighted Average Calculation
+To take a weighted average of all categories on the rubric, let $g_i$ denote the 4-point score of the $i$-th category
+and $w_i$ be the weight corresponding to the same category. Then the overall 4-point grade $G$ is given by 
+
+$$G = \sum_i g_i \cdot w_i $$
