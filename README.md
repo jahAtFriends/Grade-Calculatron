@@ -52,3 +52,8 @@ For example, the 4-point average of 3.1 falls between a B and B+ which correspon
 range of 3.0 - 3.3. Thus, we map the 4-point interval to the percentage interval to calculate the final grade, rounded to the neares
 percent. In some edge cases, this may result in a rounding up of a percentage score to the next letter grade (e.g. a 3.2999 is 
 _technically_ a B-, but would still round to a grade of 87%). This is the intended operation of the formula.
+
+Here is the proper formula for the percentage score P given the 4-point average $G$, the bounding 4-point scores $g_l$ and $g_u$,
+and the bounding percentage scores $p_l$ and $p_u$:
+
+$$P = \lceil\frac{G-g_l}{g_u-g_l} * (p_u - p_l) + p_l)\rceil$$
