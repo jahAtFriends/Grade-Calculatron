@@ -1,3 +1,18 @@
+/*
+* Grade calculation script for the FSB Department of CS Universal Grading Scheme.
+* See https://github.com/jahatfriends/Grade-Calculatron for mor information.
+*
+*
+* (c) 2023 Joel Hammer
+* Friends School of Baltimore
+* Department of Computer Science
+*
+*
+*
+*/
+
+
+//Format [Letter grade, Grade point, % Score upper bound (inclusive).
 let grades =  [
                 ["A+", 4.0, 1.0], ["A", 3.8, 0.96], ["A-", 3.6, 0.92],
                 ["B+", 3.3, 0.89], ["B", 3.0, 0.86], ["B-", 2.7, 0.82],
@@ -35,6 +50,7 @@ function updateGrade() {
     let ctscore = parseFloat(ctSelect.value);
     let ctWeightVal = parseFloat(ctWeight.value);
     
+    //Calculate 4-pt weighted average.
     let avg = homscore * homweightVal + cpscore * cpWeightVal + ctscore * ctWeightVal;
     
     let lb, ub;
@@ -60,6 +76,7 @@ function updateGrade() {
     
     let percentScore = (avg - grades[lb][1]) / (grades[ub][1] - grades[lb][1]) * (grades[ub][2] - grades[lb][2]) + grades[lb][2];
     percentScore *= 100;
+    percentScore = Math.round(percentScore)
     
     let totalPoints = parseFloat(document.getElementById("total-points").value) * percentScore / 100.0;
     
