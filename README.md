@@ -42,5 +42,13 @@ $$G = \sum_i g_i \cdot w_i $$
 
 ### Conversion Back to Letter Grade and Percentage
 
-The weighted average yields a 4-point score. If necessary to convert back to a letter grade use the chart above.
-The third collumn gives a range of percentages
+The weighted average yields a 4-point score. It is usually necessary to convert this back to a percentage score. For this,
+we use the third column of our table. In the case where the weighted average falls exactly on one of the 4-point scores, the
+percentage score will be the lower bound for that range. Otherwise the score falls between two rows. In that case, the
+percentage will be calculated by mapping the interval of the bounding 4-point scores to the interval bounding the percentages.
+The percentage bounds are the lower bounds of the bounding percentage scores.
+
+For example, the 4-point average of 3.1 falls between a B and B+ which corresponds to the percentage range 83% - 87% and a 4-point
+range of 3.0 - 3.3. Thus, we map the 4-point interval to the percentage interval to calculate the final grade, rounded to the neares
+percent. In some edge cases, this may result in a rounding up of a percentage score to the next letter grade (e.g. a 3.2999 is 
+_technically_ a B-, but would still round to a grade of 87%). This is the intended operation of the formula.
