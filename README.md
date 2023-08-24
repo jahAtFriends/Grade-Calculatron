@@ -21,17 +21,17 @@ to the nearest whole percent. Note also that the minimum allowed grade is a 59% 
 | Letter Grade | 4-point Score | Percentage Score |
 |--------------|---------------|------------------|
 |     A+       | 4.0           | 100%             |
-|     A        | 3.8           | 93%              |
-|     A-       | 3.6           | 90%              |
-|     B+       | 3.3           | 87%              |
-|     B        | 3.0           | 83%              |
-|     B-       | 2.7           | 80%              |
-|     C+       | 2.3           | 77%              |
-|     C        | 2.0           | 73%              |
-|     C-       | 1.7           | 70%              |
-|     D+       | 1.3           | 67%              |
-|     D        | 1.0           | 63%              |
-|     D-       | 0.5           | 60%              |
+|     A        | 3.8           | 96%              |
+|     A-       | 3.6           | 92%              |
+|     B+       | 3.3           | 89%              |
+|     B        | 3.0           | 86%              |
+|     B-       | 2.7           | 82%              |
+|     C+       | 2.3           | 79%              |
+|     C        | 2.0           | 76%              |
+|     C-       | 1.7           | 72%              |
+|     D+       | 1.3           | 69%              |
+|     D        | 1.0           | 66%              |
+|     D-       | 0.5           | 62%              |
 |     F        | 0.0           | 59%              |
 
 ### Weighted Average Calculation
@@ -42,13 +42,16 @@ $$G = \sum_i g_i \cdot w_i $$
 
 ### Conversion Back to Letter Grade and Percentage
 
-The weighted average yields a 4-point score. It is usually necessary to convert this back to a percentage score. For this,
-we use the third column of our table. In the case where the weighted average falls exactly on one of the 4-point scores, the
-percentage score will be the lower bound for that range. Otherwise the score falls between two rows. In that case, the
-percentage will be calculated by mapping the interval of the bounding 4-point scores to the corresponding percentages.
+The weighted average yields a 4-point score. The final letter grade is given by the row which contains the greatest lower bound
+for that score.
+
+It is usually necessary to convert this back to a percentage score. For this, we use the third column of our table. In the case
+where the weighted average falls exactly on one of the 4-point scores, the percentage score will be the lower bound for that range.
+Otherwise the score falls between two rows. In that case, the percentage will be calculated by mapping the interval of the
+bounding 4-point scores to the corresponding percentages.
 
 For example, the 4-point average of 3.1 falls between a B and B+ which corresponds to the percentage range 83% - 87% and a 4-point
-range of 3.0 - 3.3. Thus, we map the 4-point interval to the percentage interval to calculate the final grade, rounded to the neares
+range of 3.0 - 3.3. Thus, we map the 4-point interval to the percentage interval to calculate the final grade, rounded to the nearest
 percent. In some edge cases, this may result in a rounding up of a percentage score to the next letter grade (e.g. a 3.2999 is 
 _technically_ a B-, but would still round to a grade of 87%). This is the intended operation of the formula.
 
